@@ -1,5 +1,7 @@
 package com.example.roomapplication.presentation
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.roomapplication.data.League
@@ -13,9 +15,19 @@ class MainViewModel @Inject constructor(
     private val repository: Repository
 ): ViewModel() {
 
+    private val _leagues = MutableLiveData<List<League>>()
+    val leagues: LiveData<List<League>> = _leagues
+
     fun addLeague(name: String) {
         viewModelScope.launch() {
             repository.addLeague(League(0, name))
+            getLeagues()
+        }
+    }
+
+    fun getLeagues() {
+        viewModelScope.launch {
+            _leagues.value = repository.getLeagues()
         }
     }
 
