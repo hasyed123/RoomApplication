@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.roomapplication.data.League
 import com.example.roomapplication.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,12 +18,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.rvLeagues.layoutManager = LinearLayoutManager(this)
+        val leagueAdapter = LeagueAdapter(listOf<League>())
+        binding.rvLeagues.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = leagueAdapter
+        }
 
+        viewModel.leagues.observe(this) { dataset ->
+            leagueAdapter.updateDataset(dataset)
+        }
+        viewModel.getLeagues()
         binding.btSubmit.setOnClickListener {
             if(!binding.etLeague.text.isNullOrEmpty()) {
                 viewModel.addLeague(binding.etLeague.text.toString())
             }
         }
     }
+
 }

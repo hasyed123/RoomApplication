@@ -7,7 +7,7 @@ import com.example.roomapplication.data.League
 import com.example.roomapplication.databinding.ItemLeagueBinding
 
 class LeagueAdapter(
-    private val dataset: List<League>
+    private var dataset: List<League>
 ): RecyclerView.Adapter<LeagueAdapter.LeagueViewHolder>() {
 
     class LeagueViewHolder(private val binding: ItemLeagueBinding): RecyclerView.ViewHolder(binding.root) {
@@ -30,5 +30,10 @@ class LeagueAdapter(
         dataset[position].let {
             holder.bind(it.name, it.id.toString())
         }
+    }
+
+    fun updateDataset(dataset: List<League>) {
+        this.dataset = dataset
+        notifyDataSetChanged()
     }
 }

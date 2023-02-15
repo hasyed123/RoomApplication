@@ -27,4 +27,8 @@ object Module {
     @Provides
     fun provideLeagueDao(db: HockeyDatabase) = db.leagueDao()
 
+    @Singleton
+    @Provides
+    fun provideTeamDao(db: HockeyDatabase) = db.teamDao()
+
 }
