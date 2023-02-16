@@ -13,4 +13,12 @@ class Repository @Inject constructor(
     suspend fun getLeagues(): List<League> {
         return leagueDao.selectAll()
     }
+
+    suspend fun addTeam(team: Team) {
+        teamDao.insert(team)
+    }
+
+    suspend fun getTeams(leagueId: Int): LeagueWithTeams? {
+        return teamDao.selectTeamsInLeague(leagueId)
+    }
 }
