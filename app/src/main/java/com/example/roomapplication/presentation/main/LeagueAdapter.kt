@@ -1,4 +1,4 @@
-package com.example.roomapplication.presentation
+package com.example.roomapplication.presentation.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,8 @@ import com.example.roomapplication.data.League
 import com.example.roomapplication.databinding.ItemLeagueBinding
 
 class LeagueAdapter(
-    private var dataset: List<League>
+    private var dataset: List<League>,
+    val onItemClickListener: (Int) -> Unit
 ): RecyclerView.Adapter<LeagueAdapter.LeagueViewHolder>() {
 
     class LeagueViewHolder(private val binding: ItemLeagueBinding): RecyclerView.ViewHolder(binding.root) {
@@ -27,8 +28,9 @@ class LeagueAdapter(
     }
 
     override fun onBindViewHolder(holder: LeagueViewHolder, position: Int) {
-        dataset[position].let {
-            holder.bind(it.name, it.id.toString())
+        dataset[position].apply {
+            holder.bind(name, id.toString())
+            holder.itemView.setOnClickListener { onItemClickListener(id) }
         }
     }
 

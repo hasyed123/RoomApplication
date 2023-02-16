@@ -1,4 +1,4 @@
-package com.example.roomapplication.presentation
+package com.example.roomapplication.presentation.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

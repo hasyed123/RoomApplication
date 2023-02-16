@@ -9,7 +9,7 @@ interface TeamDao {
     suspend fun insert(team: Team)
 
     @Transaction
-    @Query("SELECT * FROM team_table WHERE leagueId = :leagueId")
-    suspend fun selectTeamsInLeague(leagueId: Int): LeagueWithTeams
+    @Query("SELECT * FROM league_table WHERE id = :leagueId")
+    suspend fun selectTeamsInLeague(leagueId: Int): LeagueWithTeams?
 
 }
