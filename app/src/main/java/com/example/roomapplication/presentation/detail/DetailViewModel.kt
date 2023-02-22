@@ -20,6 +20,10 @@ class DetailViewModel @Inject constructor(
 
     private var leagueId: Int = 0
 
+    fun setup(leagueId: Int) {
+        this.leagueId = leagueId
+    }
+
     fun getTeams() {
         viewModelScope.launch {
             _teams.value = repository.getTeams(leagueId)?.teams
@@ -31,10 +35,6 @@ class DetailViewModel @Inject constructor(
             repository.addTeam(Team(name, leagueId))
             getTeams()
         }
-    }
-
-    fun setLeague(leagueId: Int) {
-        this.leagueId = leagueId
     }
 
 }

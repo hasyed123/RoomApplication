@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.roomapplication.R
 import com.example.roomapplication.databinding.ActivityDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +20,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun initializeUI() {
-        viewModel.setLeague(intent.getIntExtra("LEAGUE",0))
+        viewModel.setup(intent.getIntExtra("LEAGUE",0))
 
         val teamAdapter = TeamAdapter(listOf())
         binding.rvTeams.apply {

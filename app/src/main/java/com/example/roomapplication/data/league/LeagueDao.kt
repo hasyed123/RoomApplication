@@ -9,7 +9,7 @@ import androidx.room.Query
 interface LeagueDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(league: League)
+    suspend fun insert(league: League): Long
 
     @Query("SELECT * FROM league ORDER BY id ASC")
     suspend fun selectAll(): List<League>
