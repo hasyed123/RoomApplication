@@ -1,4 +1,4 @@
-package com.example.roomapplication.data
+package com.example.roomapplication.data.team
 
 import androidx.room.*
 
@@ -9,7 +9,7 @@ interface TeamDao {
     suspend fun insert(team: Team)
 
     @Transaction
-    @Query("SELECT * FROM league_table WHERE id = :leagueId")
+    @Query("SELECT * FROM league WHERE id = :leagueId")
     suspend fun selectTeamsInLeague(leagueId: Int): LeagueWithTeams?
 
 }

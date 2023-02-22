@@ -1,9 +1,9 @@
-package com.example.roomapplication.data
+package com.example.roomapplication.data.league
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "league_table")
+@Entity(tableName = "league")
 data class League(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
