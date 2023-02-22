@@ -1,5 +1,10 @@
 package com.example.roomapplication.data
 
+import com.example.roomapplication.data.league.League
+import com.example.roomapplication.data.league.LeagueDao
+import com.example.roomapplication.data.team.LeagueWithTeams
+import com.example.roomapplication.data.team.Team
+import com.example.roomapplication.data.team.TeamDao
 import javax.inject.Inject
 
 class Repository @Inject constructor(

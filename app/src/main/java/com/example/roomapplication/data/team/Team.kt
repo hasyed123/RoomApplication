@@ -1,11 +1,12 @@
-package com.example.roomapplication.data
+package com.example.roomapplication.data.team
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import com.example.roomapplication.data.league.League
 
 @Entity(
-    tableName = "team_table",
+    tableName = "team",
     foreignKeys = [
         ForeignKey(
             entity = League::class,

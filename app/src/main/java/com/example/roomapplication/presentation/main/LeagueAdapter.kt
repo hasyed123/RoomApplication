@@ -3,7 +3,7 @@ package com.example.roomapplication.presentation.main
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.roomapplication.data.League
+import com.example.roomapplication.data.league.League
 import com.example.roomapplication.databinding.ItemLeagueBinding
 
 class LeagueAdapter(

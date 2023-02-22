@@ -3,8 +3,7 @@ package com.example.roomapplication.presentation.detail
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.roomapplication.data.League
-import com.example.roomapplication.data.Team
+import com.example.roomapplication.data.team.Team
 import com.example.roomapplication.databinding.ItemTeamBinding
 
 class TeamAdapter(private var dataset: List<Team>): RecyclerView.Adapter<TeamAdapter.TeamViewHolder>() {
