@@ -12,7 +12,6 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.roomapplication.data.league.League
 import com.example.roomapplication.databinding.FragmentLeaguesBinding
-import com.example.roomapplication.presentation.detail.DetailActivity
 import com.example.roomapplication.presentation.main.LeagueAdapter
 import com.example.roomapplication.presentation.main.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
