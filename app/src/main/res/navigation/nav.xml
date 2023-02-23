@@ -6,7 +6,7 @@
     app:startDestination="@id/leagueFragment">
     <fragment
         android:id="@+id/leagueFragment"
-        android:name="com.example.roomapplication.LeaguesFragment"
+        android:name="com.example.roomapplication.presentation.LeagueListScreen.LeaguesFragment"
         android:label="fragment_league"
         tools:layout="@layout/fragment_leagues" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/teamsFragment"
-        android:name="com.example.roomapplication.TeamsFragment"
+        android:name="com.example.roomapplication.presentation.TeamListScreen.TeamsFragment"
         android:label="fragment_teams"
         tools:layout="@layout/fragment_teams" >
         <argument

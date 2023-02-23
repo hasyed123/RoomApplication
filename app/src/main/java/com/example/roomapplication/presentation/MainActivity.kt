@@ -1,4 +1,4 @@
-package com.example.roomapplication.presentation.main
+package com.example.roomapplication.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

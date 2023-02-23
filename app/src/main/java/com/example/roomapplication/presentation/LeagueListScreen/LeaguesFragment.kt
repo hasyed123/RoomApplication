@@ -1,19 +1,15 @@
-package com.example.roomapplication
+package com.example.roomapplication.presentation.LeagueListScreen
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.roomapplication.data.league.League
+import com.example.roomapplication.R
 import com.example.roomapplication.databinding.FragmentLeaguesBinding
-import com.example.roomapplication.presentation.main.LeagueAdapter
-import com.example.roomapplication.presentation.main.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 // TODO: Rename parameter arguments, choose names that match
@@ -32,7 +28,7 @@ class LeaguesFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: LeaguesViewModel by viewModels()
     private lateinit var binding: FragmentLeaguesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
