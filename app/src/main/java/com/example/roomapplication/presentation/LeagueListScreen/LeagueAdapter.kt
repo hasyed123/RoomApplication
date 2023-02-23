@@ -1,4 +1,4 @@
-package com.example.roomapplication.presentation.main
+package com.example.roomapplication.presentation.LeagueListScreen
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

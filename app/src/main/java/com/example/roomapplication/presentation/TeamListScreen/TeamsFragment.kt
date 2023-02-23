@@ -1,4 +1,4 @@
-package com.example.roomapplication
+package com.example.roomapplication.presentation.TeamListScreen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.roomapplication.databinding.FragmentTeamsBinding
-import com.example.roomapplication.presentation.detail.DetailViewModel
-import com.example.roomapplication.presentation.detail.TeamAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 // TODO: Rename parameter arguments, choose names that match
@@ -30,7 +28,7 @@ class TeamsFragment : Fragment() {
 
     private var leagueId: Int? = null
 
-    private val viewModel: DetailViewModel by viewModels()
+    private val viewModel: TeamsViewModel by viewModels()
     private lateinit var binding: FragmentTeamsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
