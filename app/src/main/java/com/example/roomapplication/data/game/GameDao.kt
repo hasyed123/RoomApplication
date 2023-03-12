@@ -6,7 +6,7 @@ import androidx.room.*
 interface GameDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(game: Game)
+    suspend fun insert(gameEntity: GameEntity)
 
     @Transaction
     @Query("SELECT * FROM league WHERE id = :leagueId")
@@ -20,14 +20,5 @@ interface GameDao {
     @Query("SELECT leagueId FROM team WHERE name = :name")
     suspend fun getIdFromTeam(name: String): Int?
 
-    @Transaction
-    suspend fun insertGameByParams(team1: String, team2: String) {
-        if(team1 == team2) return
-        val id1 = getIdFromTeam(team1)
-        val id2 = getIdFromTeam(team2)
-        if(id1 != null && id1 == id2) {
-            insert(Game(0, team1, team2, id1))
-        }
-    }
 
 }

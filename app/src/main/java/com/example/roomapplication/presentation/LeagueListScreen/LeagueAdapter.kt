@@ -3,8 +3,9 @@ package com.example.roomapplication.presentation.LeagueListScreen
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.roomapplication.data.league.League
+import com.example.roomapplication.data.league.LeagueEntity
 import com.example.roomapplication.databinding.ItemLeagueBinding
+import com.example.roomapplication.domain.model.League
 
 class LeagueAdapter(
     private var dataset: List<League>,

@@ -21,6 +21,9 @@ class GamesFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var leagueId: Int? = null
+    private var teamName: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
