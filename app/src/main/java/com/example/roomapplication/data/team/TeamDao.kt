@@ -6,7 +6,7 @@ import androidx.room.*
 interface TeamDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(team: Team)
+    suspend fun insert(teamEntity: TeamEntity)
 
     @Transaction
     @Query("SELECT * FROM league WHERE id = :leagueId")

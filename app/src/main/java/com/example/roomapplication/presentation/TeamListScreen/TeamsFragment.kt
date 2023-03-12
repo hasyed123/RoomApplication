@@ -51,9 +51,8 @@ class TeamsFragment : Fragment() {
     }
 
     private fun initializeUI() {
-        viewModel.setup(leagueId ?: 0)
-
         val teamAdapter = TeamAdapter(listOf())
+
         binding.rvTeams.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = teamAdapter
@@ -69,7 +68,7 @@ class TeamsFragment : Fragment() {
             }
         }
 
-        viewModel.getTeams()
+        viewModel.setup(leagueId ?: 0)
     }
 
     companion object {

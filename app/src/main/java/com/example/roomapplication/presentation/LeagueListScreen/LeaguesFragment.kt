@@ -51,19 +51,23 @@ class LeaguesFragment : Fragment() {
 
     private fun initializeUi() {
         val leagueAdapter = LeagueAdapter(emptyList(), ::navigate)
+
         binding.rvLeagues.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = leagueAdapter
         }
+
         viewModel.leagues.observe(viewLifecycleOwner) { dataset ->
             leagueAdapter.updateDataset(dataset)
         }
+
         binding.btAddLeague.setOnClickListener {
             binding.etLeague.text.let {
                 if(!it.isNullOrEmpty()) viewModel.addLeague(it.toString())
             }
         }
-        viewModel.getLeagues()
+
+        viewModel.setup()
     }
 
     private fun navigate(leagueId: Int) {

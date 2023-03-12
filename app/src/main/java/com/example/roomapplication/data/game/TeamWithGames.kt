@@ -2,20 +2,19 @@ package com.example.roomapplication.data.game
 
 import androidx.room.Embedded
 import androidx.room.Relation
-import com.example.roomapplication.data.league.League
-import com.example.roomapplication.data.team.Team
+import com.example.roomapplication.data.team.TeamEntity
 
 data class TeamWithGames(
     @Embedded
-    val team: Team,
+    val teamEntity: TeamEntity,
     @Relation(
-        parentColumn = "name",
-        entityColumn = "team1"
+        parentColumn = "id",
+        entityColumn = "team1Id"
     )
-    val games1: List<Game>,
+    val games1: List<GameEntity>,
     @Relation(
-        parentColumn = "name",
-        entityColumn = "team2"
+        parentColumn = "id",
+        entityColumn = "team2Id"
     )
-    val games2: List<Game>
+    val games2: List<GameEntity>
 )
